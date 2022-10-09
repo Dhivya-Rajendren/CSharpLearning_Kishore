@@ -10,39 +10,60 @@ namespace ClassesAndObjects
     {
         static Employee[] employees = new Employee[3];
 
-        public EmployeeRepository()
+        public EmployeeRepository()//Constructor - Special method , which has the same name as the class and doesnt contain a return type
         {
-            employees[0] =
-            new Employee() { employeeId = 1, firstName = "Kishore", lastName = "kumar", email = "kk@cloudkampus.com", mobile = 784512 };
+            //employees[0] =
+            //new Employee(1, "Kishore", "kumar", "kk@cloudkampus.com", 784512);
          }
 
-        public void PrintDetails()
+        public void PrintDetails()//Method
         {
-            foreach (Employee employee in employees)
-            {
-                if (employee!=null)
+           
+                foreach (Employee employee in employees)
                 {
-                    Console.WriteLine($"Welcome, {employee.firstName} , { employee.lastName} ");
-                    Console.WriteLine($"Your Contact Details {employee.email} and Contact {employee.mobile}");
-                }
+
+                    if (employee != null)
+                    {
+                        Console.WriteLine($"Welcome {employee.EmployeeName}, Contact Details {employee.Email}");
+                    }
+                    else
+                    {
+
+                       
+                    }
+
                 
             }
-
-
         }
 
-        public void AddNewEmployee()
+        public void AddNewEmployee()//Method
         {
-            Console.WriteLine("Enter Employee Id");
+
+            //Using the properties for getting the Employee Data
             Employee emp = new Employee();
-            emp.employeeId = int.Parse(Console.ReadLine());
-            emp.firstName = Console.ReadLine();
-            emp.lastName=Console.ReadLine();
-            emp.email = Console.ReadLine();
-            emp.mobile=long.Parse(Console.ReadLine());
-            employees[1] = emp;
-            Console.WriteLine("Employee Details Added ");
+            emp.EmployeeId = 123;
+            emp.EmployeeName = "Kishore Kumar";
+            emp.Email = "KK@cloudkampus.com";
+            emp.Mobile = 90876543;
+
+            employees[0] = emp;
             PrintDetails();
+
+
+
+
+         //   Console.WriteLine("Enter Employee Id");
+         ////   Employee emp = new Employee(100,"Aabha","Kumar","Aabha@gmail.com",784512);
+           
+         ///   employees[0] = emp;
+         //   Console.WriteLine("Employee Details Added ");
+         //   PrintDetails();
+         //   Employee emp1 = new Employee();
+         //   employees[1] = emp1;
+         //   PrintDetails();
+         //   Employee emp2 = new Employee(102, "Twinkle", "Rajan");
+         //   employees[2]=emp2;
+         //   PrintDetails();
 
         }
     }
