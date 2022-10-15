@@ -19,18 +19,14 @@ namespace OOPsLearning.BookStore
             Console.WriteLine($"Details are :{Name}, {Email}, {Contact}");
         }
 
-
     }
 
-   
-
-    public class BookStoreMember:Person   // Child class, sub class, dervied class
+       public class BookStoreMember:Person   // Child class, sub class, dervied class
     {
         public int MemberId { get; set; }
     }
 
-
-    public class Author:Person
+     public class Author:Person
     {
         public string AuthorId { get; set; }
     }
